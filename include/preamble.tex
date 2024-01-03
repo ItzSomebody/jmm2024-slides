@@ -1,0 +1,50 @@
+%%%%%% Beamer configuration
+\usetheme{Darmstadt}
+\usecolortheme{default}
+
+% Makes ToC look less ugly
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+
+% Gets rid of bottom navigation bars
+\setbeamertemplate{footline}[frame number]{}
+
+% Gets rid of bottom navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Gets rid of footer
+% Will override 'frame number' instruction above
+%\setbeamertemplate{footline}{}
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}[default]
+
+%%%%%% BibLaTeX
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{refs.bib}
+
+%%%%%% AMS packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%%%%%% Misc. packages
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{physics}
+
+
+%%%%%% tikz
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+%\hypersetup{
+%	colorlinks=true,
+%	citecolor=blue,      
+%	urlcolor=cyan,
+%	%linkcolor=red,
+%	%pdftitle={idk},
+%	%pdfpagemode=FullScreen,
+%}

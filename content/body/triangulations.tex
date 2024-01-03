@@ -1,0 +1,260 @@
+\section{Triangulations of $n$-gon}
+
+\begin{frame}{Triangulations of $n$-gon}
+    In this talk, a \textbf{triangulation} of an $n$-gon is a division of the $n$-gon into triangles by some choice of non-intersecting diagonals along with the sides of the $n$-gon.
+    \begin{center}
+		\begin{tikzpicture}[scale=0.3,baseline=(current bounding box.center)]
+			% Vertices
+			\begin{scope}[every node/.style={circle,fill,draw,inner sep=2pt}]
+				\node (A) at (5,0) {};
+				\node (B) at (2.5,4.33) {};
+				\node (C) at (-2.5,4.33) {};
+				\node (D) at (-5,0) {};
+				\node (E) at (-2.5,-4.33) {};
+				\node (F) at (2.5,-4.33) {};
+			\end{scope}
+			
+			% Edges
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=black,thick}]
+				
+				% sides
+				\path (A) edge (B);
+				\path (B) edge (C);
+				\path (C) edge (D);
+				\path (D) edge (E);
+				\path (E) edge (F);
+				\path (F) edge (A);
+			\end{scope}
+
+			% Diagonals
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle,inner sep=1pt},
+				every edge/.style={draw=blue,thick}]
+				
+				\path (A) edge (D) edge (E);
+				\path (A) edge node {$a$} (C);
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+    These are special cases of \textbf{ideal triangulations} as described by Fomin, Shapiro, and Thurston in \cite{fominClusterAlgebrasTriangulated2006}.
+\end{frame}
+
+\begin{frame}{Flipping of a Triangulation}
+    We can \textbf{flip} a diagonal of the triangulation by removing a diagonal and replacing it with the other diagonal of the resulting quadrilateral.
+    \begin{center}
+        \begin{tikzpicture}[scale=0.3,baseline=(current bounding box.center)]
+			% Vertices
+			\begin{scope}[every node/.style={circle,fill,draw,inner sep=2pt}]
+				\node (A) at (5,0) {};
+				\node (B) at (2.5,4.33) {};
+				\node (C) at (-2.5,4.33) {};
+				\node (D) at (-5,0) {};
+				\node (E) at (-2.5,-4.33) {};
+				\node (F) at (2.5,-4.33) {};
+			\end{scope}
+			
+			% Edges
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=black,thick}]
+				
+				% sides
+				\path (A) edge (B);
+				\path (B) edge (C);
+				\path (C) edge (D);
+				\path (D) edge (E);
+				\path (E) edge (F);
+				\path (F) edge (A);
+			\end{scope}
+
+			% Diagonals
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle,inner sep=1pt},
+				every edge/.style={draw=blue,thick}]
+				
+				\path (A) edge (D) edge (E);
+				\path (A) edge node {$a$} (C);
+			\end{scope}
+		\end{tikzpicture}
+		\begin{tikzpicture}[baseline=(current bounding box.center)]
+			\begin{scope}[>={Stealth[black,inset=1pt,length=10pt]},
+				every edge/.style={draw=black,thick}]
+				
+				\node (A) at (0,0) {};
+				\node (B) at (1.5,0) {};
+				\path[<->] (A) edge (B);
+			\end{scope}
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=0.3,baseline=(current bounding box.center)]
+			% Vertices
+			\begin{scope}[every node/.style={circle,fill,draw,inner sep=2pt}]
+				\node (A) at (5,0) {};
+				\node (B) at (2.5,4.33) {};
+				\node (C) at (-2.5,4.33) {};
+				\node (D) at (-5,0) {};
+				\node (E) at (-2.5,-4.33) {};
+				\node (F) at (2.5,-4.33) {};
+			\end{scope}
+			
+			% Edges
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=black,thick}]
+				
+				% sides
+				\path (A) edge (B);
+				\path (B) edge (C);
+				\path (C) edge (D);
+				\path (D) edge (E);
+				\path (E) edge (F);
+				\path (F) edge (A);
+			\end{scope}
+
+			% Edges
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle,inner sep=1pt},
+				every edge/.style={draw=blue,thick}]
+				
+				% diagonals
+				\path (A) edge (D) edge (E);
+				\path (D) edge node {$b$} (B);
+			\end{scope}
+		\end{tikzpicture}
+    \end{center}
+    In the above, we flip the triangulation on the left by exchanging the diagonal $a$ for the diagonal $b$.
+\end{frame}
+
+\begin{frame}{Quick Properties of Flips}
+	\begin{enumerate}
+		\item Flips are involutive (self-inverse):
+		\begin{center}
+			\begin{tikzpicture}[scale=0.2,baseline=(current bounding box.center)]
+				% Vertices
+				\begin{scope}[every node/.style={circle,fill,draw,inner sep=1.5pt}]
+					\node (A) at (5,0) {};
+					\node (B) at (2.5,4.33) {};
+					\node (C) at (-2.5,4.33) {};
+					\node (D) at (-5,0) {};
+					\node (E) at (-2.5,-4.33) {};
+					\node (F) at (2.5,-4.33) {};
+				\end{scope}
+				
+				% Edges
+				\begin{scope}[>={Stealth[black]},
+					every node/.style={fill=white,circle},
+					every edge/.style={draw=black,thick}]
+					
+					% sides
+					\path (A) edge (B);
+					\path (B) edge (C);
+					\path (C) edge (D);
+					\path (D) edge (E);
+					\path (E) edge (F);
+					\path (F) edge (A);
+				\end{scope}
+	
+				% Diagonals
+				\begin{scope}[>={Stealth[black]},
+					every node/.style={fill=white,circle,inner sep=1pt},
+					every edge/.style={draw=blue,thick}]
+					
+					\path (A) edge (D) edge (E);
+					\path (A) edge node {$a$} (C);
+				\end{scope}
+			\end{tikzpicture}
+			\begin{tikzpicture}[baseline=(current bounding box.center)]
+				\begin{scope}[>={Stealth[black,inset=1pt,length=10pt]},
+					every edge/.style={draw=black,thick}]
+					
+					\node (A) at (0,0) {};
+					\node (B) at (1,0) {};
+					\path[->] (A) edge (B);
+				\end{scope}
+			\end{tikzpicture}
+			\begin{tikzpicture}[scale=0.2,baseline=(current bounding box.center)]
+				% Vertices
+				\begin{scope}[every node/.style={circle,fill,draw,inner sep=1.5pt}]
+					\node (A) at (5,0) {};
+					\node (B) at (2.5,4.33) {};
+					\node (C) at (-2.5,4.33) {};
+					\node (D) at (-5,0) {};
+					\node (E) at (-2.5,-4.33) {};
+					\node (F) at (2.5,-4.33) {};
+				\end{scope}
+				
+				% Edges
+				\begin{scope}[>={Stealth[black]},
+					every node/.style={fill=white,circle},
+					every edge/.style={draw=black,thick}]
+					
+					% sides
+					\path (A) edge (B);
+					\path (B) edge (C);
+					\path (C) edge (D);
+					\path (D) edge (E);
+					\path (E) edge (F);
+					\path (F) edge (A);
+				\end{scope}
+	
+				% Edges
+				\begin{scope}[>={Stealth[black]},
+					every node/.style={fill=white,circle,inner sep=1pt},
+					every edge/.style={draw=blue,thick}]
+					
+					% diagonals
+					\path (A) edge (D) edge (E);
+					\path (D) edge node {$b$} (B);
+				\end{scope}
+			\end{tikzpicture}
+			\begin{tikzpicture}[baseline=(current bounding box.center)]
+				\begin{scope}[>={Stealth[black,inset=1pt,length=10pt]},
+					every edge/.style={draw=black,thick}]
+					
+					\node (A) at (0,0) {};
+					\node (B) at (1,0) {};
+					\path[->] (A) edge (B);
+				\end{scope}
+			\end{tikzpicture}
+			\begin{tikzpicture}[scale=0.2,baseline=(current bounding box.center)]
+				% Vertices
+				\begin{scope}[every node/.style={circle,fill,draw,inner sep=1.5pt}]
+					\node (A) at (5,0) {};
+					\node (B) at (2.5,4.33) {};
+					\node (C) at (-2.5,4.33) {};
+					\node (D) at (-5,0) {};
+					\node (E) at (-2.5,-4.33) {};
+					\node (F) at (2.5,-4.33) {};
+				\end{scope}
+				
+				% Edges
+				\begin{scope}[>={Stealth[black]},
+					every node/.style={fill=white,circle},
+					every edge/.style={draw=black,thick}]
+					
+					% sides
+					\path (A) edge (B);
+					\path (B) edge (C);
+					\path (C) edge (D);
+					\path (D) edge (E);
+					\path (E) edge (F);
+					\path (F) edge (A);
+				\end{scope}
+	
+				% Diagonals
+				\begin{scope}[>={Stealth[black]},
+					every node/.style={fill=white,circle,inner sep=1pt},
+					every edge/.style={draw=blue,thick}]
+					
+					\path (A) edge (D) edge (E);
+					\path (A) edge node {$a$} (C);
+				\end{scope}
+			\end{tikzpicture}
+		\end{center}
+
+		\vfill
+
+		\item Number of edges invariant under flips
+	\end{enumerate}
+\end{frame}
