@@ -9,7 +9,7 @@
     \begin{itemize}
         \item Actively studied in theoretical physics: connections to mirror symmetry
         
-        \item Nice source of quivers
+        \item Interesting source of quivers
     \end{itemize}
 \end{frame}
 
@@ -288,7 +288,7 @@
 \end{frame}
 
 \begin{frame}{Quivers with Potential}
-    \textbf{Potential} of a dimer quiver $Q$ is the formal quantity
+    \textbf{Potential} of a dimer quiver $Q$ is the formal quantity \cite{bocklandtDimerABC2015}
     \begin{align*}
         W = \sum (\text{cycles of } Q \text{ about } \bullet) - \sum (\text{cycles of } Q \text{ about } \circ).
     \end{align*}
@@ -296,8 +296,11 @@
     \begin{itemize}
         \justifying
         \item Rigorously defined using path algebras: $W$ is an element of the quotient space $\CC Q/[\CC Q, \CC Q]$ where $[\CC Q, \CC Q]$ is the subspace of $\CC Q$ spanned by commutators.
+        \begin{itemize}
+            \item A way for representation theory to enter the picture! We will ignore this perspective entirely, though :(
+        \end{itemize}
     \end{itemize}
-    The pair $(Q, W)$ is called a \textbf{quiver with potential}.
+    The pair $(Q, W)$ is called a \textbf{quiver with potential} \cite{derksenQuiversPotentialsTheir2007}.
 \end{frame}
 
 \begin{frame}{Example}
@@ -371,7 +374,7 @@ To \textbf{mutate} $(Q, W)$, modify step 1 to add newly created cycles to $W$ an
 
 \vspace{0.5cm}
 
-This modified variant is known as \textbf{QP mutation} as described by Derksen, Weymann, and Zelevinsky \cite{derksenQuiversPotentialsTheir2007}. The potential allows us to control which $2$-cycles are allowed to be deleted and which are left alone.
+This modified variant is known as \textbf{QP mutation} as described by Derksen, Weyman, and Zelevinsky \cite{derksenQuiversPotentialsTheir2007}. The potential allows us to control which $2$-cycles are allowed to be deleted and which are left alone.
 \end{frame}
 
 \begin{frame}{Join Moves}
@@ -667,7 +670,7 @@ This modified variant is known as \textbf{QP mutation} as described by Derksen, 
 \end{frame}
 
 \begin{frame}{General $n$-face Urban Renewal}
-    Let $\Gamma$ be a dimer model with no nodes of degree $2$. \textbf{General $n$-face urban renewal} of $\Gamma$ at the $n$-face $f$ with nodes $x_1, \ldots, x_n$ consists of the following steps:
+    Let $\Gamma$ be a dimer model with no bivalent nodes. \textbf{General $n$-face urban renewal} of $\Gamma$ at the $n$-face $f$ with nodes $x_1, \ldots, x_n$ consists of the following steps:
     
     \vfill
 
@@ -869,7 +872,7 @@ This modified variant is known as \textbf{QP mutation} as described by Derksen, 
 \end{frame}
 
 \begin{frame}{Properties of General $n$-face Urban Renewal}
-    Can be thought of as a generalization of traditional urban renewal ($n = 4$ case) \cite[Section~2.5]{fominIntroductionClusterAlgebras2021a}
+    Can be thought of as a generalization (loosely speaking) of traditional urban renewal ($n = 4$ case) \cite[Section~2.5]{fominIntroductionClusterAlgebras2021a}
 
     \begin{theorem}
         \justifying
